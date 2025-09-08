@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Lite Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ESG Lite Dashboard</h1>
+            <p>Мониторинг устойчивости вашего проекта</p>
+        </header>
+        
+        <div class="setup-section">
+            <h2>Настройка</h2>
+            <div class="form-group">
+                <label for="repoUrl">GitHub репозиторий (формат: username/repo):</label>
+                <input type="text" id="repoUrl" placeholder="ваш-логин/название-репозитория">
+            </div>
+            <button onclick="fetchESGData()">Обновить данные</button>
+            <div id="status" class="status"></div>
+        </div>
+        
+        <div class="metrics">
+            <div class="metric-card">
+                <h3>🌍 Углеродный след</h3>
+                <div class="metric-value" id="carbon">-</div>
+                <p class="metric-desc">Оценка энергопотребления проекта</p>
+            </div>
+            
+            <div class="metric-card">
+                <h3>👥 Вовлеченность команды</h3>
+                <div class="metric-value" id="engagement">-</div>
+                <p class="metric-desc">Активность участников проекта</p>
+            </div>
+            
+            <div class="metric-card">
+                <h3>📄 Прозрачность</h3>
+                <div class="metric-value" id="transparency">-</div>
+                <p class="metric-desc">Качество документации</p>
+            </div>
+            
+            <div class="metric-card">
+                <h3>⚡ Энергоэффективность</h3>
+                <div class="metric-value" id="efficiency">-</div>
+                <p class="metric-desc">Оптимизация ресурсов проекта</p>
+            </div>
+            
+            <div class="metric-card">
+                <h3>🤝 Социальное влияние</h3>
+                <div class="metric-value" id="social">-</div>
+                <p class="metric-desc">Вклад в open source сообщество</p>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <h2>Итоговый ESG рейтинг</h2>
+            <div class="score" id="totalScore">0</div>
+            <button onclick="generatePDF()">Экспорт PDF</button>
+        </div>
+    </div>
+    
+    <script src="esg-calculator.js"></script>
+</body>
+</html>
